@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from shortener.views import shortener_redirect_views, ShortenerRedirectView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('view1/', shortener_redirect_views),
+    path('view2/', ShortenerRedirectView.as_view()),
 ]
